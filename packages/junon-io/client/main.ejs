@@ -974,6 +974,46 @@
                             <td>Returns the smallest value among the given arguments. Ex. $min(1,2,3,4,5) = 1</td>
                         </tr>
                         <tr>
+                          <td class='function_name'>$sin</td>
+                          <td>value</td>
+                          <td>Returns sine of value in radians. Example: $sin(3.14) ≈ 0</td>
+                        </tr>
+                        <tr>
+                          <td class='function_name'>$cos</td>
+                          <td>value</td>
+                          <td>Returns cosine of value in radians. Example: $cos(0) = 1</td>
+                        </tr>
+                        <tr>
+                          <td class='function_name'>$tan</td>
+                          <td>value</td>
+                          <td>Returns tangent of value in radians. Example: $tan(0) = 0</td>
+                        </tr>
+                        <tr>
+                          <td class='function_name'>$deleteFromString</td>
+                          <td>value, sub</td>
+                          <td>Deletes text from string and returns it. Ex. $deleteFromString(hello,l) returns "heo"</td>
+                        </tr>
+                        <tr>
+                          <td class='function_name'>$replaceFromString</td>
+                          <td>value, sub, replacement</td>
+                          <td>Replaces text from string and returns it. Ex. $replaceFromString(cards,ca,xc) returns "xcrds"</td>
+                        </tr>
+                        <tr>
+                          <td class='function_name'>$getFromDictionary</td>
+                          <td>value(dictionary), key</td>
+                          <td>Returns value of key in dictionary Ex. $getFromDictionary(key1=123;key2=234,key1) returns 123</td>
+                        </tr>
+                        <tr>
+                          <td class='function_name'>$addInDictionary</td>
+                          <td>value(dictionary), key, newValue</td>
+                          <td>Adds key into dictionary and assigns its value. Ex. $addInDictionary(abc=123;key228=121,new_key,3.14) returns "abc=123;key228=121;new_key=3.14"</td>
+                        </tr>
+                        <tr>
+                          <td class='function_name'>$deleteFromDictionary</td>
+                          <td>value(dictionary), key</td>
+                          <td>Deletes key and returns new dictionary</td>
+                        </tr>
+                        <tr>
                             <td class='function_name'>$isLoggedIn</td>
                             <td>$player</td>
                             <td>true if logged in. false if not.</td>
