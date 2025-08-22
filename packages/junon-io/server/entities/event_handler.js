@@ -226,10 +226,63 @@ class EventHandler {
     return Math.max(...values.map(v => this._safeNumber(v)))
   }
 
+  sin(value) {
+    return Math.sin(value)
+  }
+  
+  cos(value) {
+    return Math.cos(value)
+  }
+
+  tan(value) {
+    return Math.tan(value);
+  }
+
   length(value) {
     return value.toString().length
   }
 
+  deleteFromString(value, sub) {
+    return value.split(sub).join("")
+  }
+
+  replaceFromString(value, sub, replacement) {
+    if (sub === "") return value;
+    return value.split(sub).join(replacement);
+  }
+
+  parseDictionaryString(value) {
+    return value
+      .split(";")
+      .filter(Boolean)
+      .map(pair => pair.split("="))
+      .reduce((obj, [k, v]) => {
+        obj[k] = v;
+        return obj;
+      }, {});
+  }
+
+  stringifyDictionaryObject(obj) {
+    return Object.entries(obj).map(([k, v]) => `${k}=${v}`).join(";");
+  }
+
+  getFromDictionary(value, key) {
+    const obj = this.parseDictionaryString(value);
+    return obj[key] ?? null;
+  }
+
+  addInDictionary(value, key, newValue) {
+    const obj = this.parseDictionaryString(value);
+    obj[key] = newValue;
+    return this.stringifyDictionaryObject(obj);
+  }
+
+  deleteFromDictionary(value, key) {
+    const obj = this.parseDictionaryString(value);
+    delete obj[key];
+    return this.stringifyDictionaryObject(obj);
+  }
+  
   getEquip(playerId) {
     let player = this.getPlayer(playerId)
     if (!player) return ""
@@ -1187,6 +1240,11 @@ class EventHandler {
       "$log": true,
       "$min": true,
       "$max": true,
+      "$deleteFromString": true,
+      "$replaceFromString": true,
+      "$getFromDictionary": true,
+      "$addInDictionary": true,
+      "$deleteFromDictionary": true,
       "$floor": true,
       "$ceil": true,
       "$isLoggedIn": true,
