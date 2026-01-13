@@ -9,7 +9,7 @@ Installation (linux)
 3. Install project dependencies
 ```
    cd ~/junon
-    npm install
+   npm install
 ```
 
 4. Setup database using the command below. It is assumed that your mysql user is 'root' with empty password. To override this, define `JUNON_DB_USER` and `JUNON_DB_PASS` in a .env file, or in the /packages/junon-common/db/config.js file.
@@ -19,7 +19,7 @@ Installation (linux)
 
 Running
 --------
-Environment
+1. Environment
 You need to choose environment(development by default):
 - development: recommended for testing stuff
 - staging: pre-production environment. Almost identical
@@ -31,23 +31,25 @@ If using staging or production you should define `IP_ADDRESS` too:
 ```
     export IP_ADDRESS="server's ip"
 ```
-Run client
+
+2. Run client
 ```
     npm run client
 ```
 
-Run server
+3. Run server
 ```
     npm run server
     Go to http://localhost:8001 to access Junon io homepage
 ```
 
-Debugging
+4. Debugging
 ---------
 ```
     Enter "chrome://inspect/" in chrome browser
     Click "Open dedicated DevTools for Node"
 ```
+
 
 Contributing guide
 ---------
