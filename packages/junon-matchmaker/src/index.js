@@ -294,17 +294,9 @@ class MatchmakerServer {
     }
   }
 
-  buildUwsApp(isSSL) {
+  buildUwsApp() {
     let app
-
-    if (isSSL) {
-      app = uws.SSLApp({
-        key_file_name:  "/root/certbot/tls.key",
-        cert_file_name: "/root/certbot/tls.crt"
-      })
-    } else {
-      app = uws.App()
-    }
+    app = uws.App()
 
     return app
   }
